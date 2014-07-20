@@ -207,7 +207,8 @@ dt2 <- cbind( dt2, dayofweek = as.factor(v) )
 
 
 ```r
-qplot( interval, steps, data=dt2, facets=dayofweek~. )
+g <- ggplot(data=dt2, aes(x=interval, y=steps)) + geom_line()
+g+facet_grid( dayofweek~.)
 ```
 
 ![plot of chunk steps_dayofweek_simulated](figure/steps_dayofweek_simulated.png) 

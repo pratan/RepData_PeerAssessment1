@@ -115,6 +115,7 @@ dt2 <- cbind( dt2, dayofweek = as.factor(v) )
 ### Question E.2
 
 ```{r steps_dayofweek_simulated}
-qplot( interval, steps, data=dt2, facets=dayofweek~. )
+g <- ggplot(data=dt2, aes(x=interval, y=steps)) + geom_line()
+g+facet_grid( dayofweek~.)
 ```
 
