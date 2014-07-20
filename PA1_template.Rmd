@@ -33,7 +33,7 @@ d_byday <- dt_notna[, list(total_steps = sum(steps), mean = mean(steps), median 
 ### Question B.1
 Create a histogram of the total number of steps per day.
 
-```{r hist_byday}
+```{r total_steps_byday}
 qplot( total_steps, data=d_byday )
 ```
 
@@ -53,12 +53,12 @@ d_interval <- dt_notna[, list(interval_mean=mean(steps), interval_max = max(step
 ```
 ### Question C.1
 Let's plot the mean number of steps by interval:
-```{r}
+```{r mean_steps_byinterval}
 ggplot(d_interval, aes(interval,interval_mean)) + geom_line()
 ```
 
 For fun, let's also plot the max number of steps by interval:
-```{r}
+```{r max_steps_byinterval}
 ggplot(d_interval, aes(interval,interval_max)) + geom_line()
 ```
 
@@ -93,7 +93,7 @@ dt2 <- dt2[order(date,interval),]
 
 ### Question D.4
 
-```{r}
+```{r total_steps_byday_simulated}
 d_byday_notna <- dt2[, list(total_steps = sum(steps), mean_steps = mean(steps), median_steps = median(steps)), by=date]
 
 qplot( total_steps, data=d_byday_notna )
@@ -114,7 +114,7 @@ dt2 <- cbind( dt2, dayofweek = as.factor(v) )
 
 ### Question E.2
 
-```{r}
+```{r steps_dayofweek_simulated}
 qplot( interval, steps, data=dt2, facets=dayofweek~. )
 ```
 
