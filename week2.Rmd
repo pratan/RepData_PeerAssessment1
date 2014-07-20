@@ -1,6 +1,6 @@
 # Reproducible Research -- Week 2 Assignment
 
-This is a combined R code and Markdown document for knitr
+This is a combined R code and Markdown document for knitr. This will generate an HTML output.
 
 ```{r}
 library( data.table )
